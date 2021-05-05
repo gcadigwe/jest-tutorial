@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NoteApp from "./components/Noteapp";
 
 function App() {
+  const noteApp = [
+    { id: 1, title: "Demo", body: "Why i love javascript", completed: false },
+    {
+      id: 2,
+      title: "Demo2",
+      body: "Why i don't like javascript",
+      completed: true,
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {noteApp.map((note) => (
+        <NoteApp note={note} />
+      ))}
     </div>
   );
 }
